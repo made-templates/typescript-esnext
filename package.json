@@ -1,0 +1,36 @@
+{
+  "name": "typescript-esnext",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "exports": "./dist/index.js",
+  "scripts": {
+    "check:lint": "eslint src --ext .ts",
+    "check:format": "prettier --check src",
+    "check": "npm run check:lint && npm run check:format",
+    "lint": "eslint src --ext .ts --fix",
+    "format": "prettier --write src",
+    "build": "tsc --build --verbose",
+    "deploy": "npm run build && node dist/index.js",
+    "dev": "nodemon --watch src --exec \"ts-node src/index.ts\""
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/made-templates/typescript-esnext.git"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "@types/node": "^20.3.2",
+    "@typescript-eslint/eslint-plugin": "^5.60.1",
+    "@typescript-eslint/parser": "^5.60.1",
+    "eslint": "^8.43.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "nodemon": "^2.0.22",
+    "prettier": "^2.8.8",
+    "ts-node": "^10.9.1",
+    "tslib": "^2.6.0",
+    "typescript": "^5.1.5"
+  }
+}

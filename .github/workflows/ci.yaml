@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    name: Build TS Project
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Install Dependencies
+      run: npm install
+
+    - name: Check Linting
+      run: npm run check:lint
+
+    - name: Check Formatting
+      run: npm run check:format
+
+    - name: Build Project
+      run: npm run build
